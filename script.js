@@ -1,4 +1,5 @@
 const newJoke = document.getElementById('grap');
+const newJokeAsImage = document.getElementById('plaatje');
 const clickButton = document.getElementById('nieuwegrap');
 
 const getJoke = async function() {
@@ -7,7 +8,7 @@ const getJoke = async function() {
         const res = await fetch(apiURL, {headers: {Accept: "application/json"}});
         const data = await res.json();
         console.log("willekeurige grap: ", data);
-        return data.joke;
+        return data;
     } catch(error) {
         console.log(error);
     }
@@ -15,7 +16,7 @@ const getJoke = async function() {
 
 const addJokeToDOM = async function() {
     const joke = await getJoke();
-    newJoke.innerHTML=(joke);
+    newJoke.innerHTML=(joke.joke);    
 };
 
 clickButton.addEventListener("click", addJokeToDOM);
