@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+    background-color: #FFCCDC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    border: solid 8px #FF6696;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: fantasy;
+    color: #990030;
+}
+
+p {
+    color: #660020;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 25px;
+}
+
+button {
+    background-color: #FF0051;
+    color: #330010;
+    font-family: cursive;
+    font-size: 50px;
+    padding: 15px;
+    margin: 50px 0;
+}
+
+#grap {
+    font-size: 25px;
+}
+
+@media (min-width: 950px) {
+    main {
+        width: 900px;
+    }
+}
