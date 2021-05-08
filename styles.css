@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: #FFCCDC;
+    background-color: #FFE6EE;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,6 +9,7 @@ body {
 main {
     border: solid 8px #FF6696;
     border-radius: 20px;
+    background-color: #FFCCDC;
 }
 
 h1 {

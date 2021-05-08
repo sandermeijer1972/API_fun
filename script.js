@@ -1,5 +1,4 @@
 const newJoke = document.getElementById('grap');
-const newJokeAsImage = document.getElementById('plaatje');
 const clickButton = document.getElementById('nieuwegrap');
 
 const getJoke = async function() {
@@ -20,6 +19,4 @@ const addJokeToDOM = async function() {
 };
 
 clickButton.addEventListener("click", addJokeToDOM);
-
-
 
