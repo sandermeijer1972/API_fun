@@ -37,6 +37,39 @@ button {
     font-size: 25px;
 }
 
+footer {
+    border: solid 8px #FF6696;
+    border-radius: 20px;
+    background-color: #FFCCDC;
+    margin: 10px;
+}
+
+#foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+img {
+    width: 60vw;
+}
+
+h2 {
+    color: #660020;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 25px;
+    font-size: 20px;
+}
+
+div {
+    color: #660020;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 25px;
+    width: 60vw;
+    text-align: left;
+}
+
 @media (min-width: 950px) {
     main {
         width: 900px;
