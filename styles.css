@@ -4,74 +4,232 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
+    transition-property: background-color;
+    transition-duration: 4000ms;
+}
+
+.dark {
+    background-color: #660022;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header {
+    color: #660022;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 25px;
+    opacity: 1;
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-delay: 2750ms;
+}
+
+.headerweg {
+    opacity: 0;
+    margin: 0;
+}
+
+header p {
+    margin: 15px;
+    font-size: 18px;
+    transition-property: all;
+    transition-duration: 1000ms;
+}
+
+.headerweg p {
+    transform: translateX(2000px);
+}
+
+header li {
+    transition-property: all;
+    transition-duration: 1000ms;
+}
+
+header li:nth-child(1) {
+    transition-delay: 250ms;
+}
+
+header li:nth-child(2) {
+    transition-delay: 500ms;
+}
+
+header li:nth-child(3) {
+    transition-delay: 750ms;
+}
+
+header li:nth-child(4) {
+    transition-delay: 1000ms;
+}
+
+header li:nth-child(5) {
+    transition-delay: 1250ms;
+}
+
+header li:nth-child(6) {
+    transition-delay: 1500ms;
+}
+
+.headerweg li:nth-child(odd) {
+    transform: translateX(-1200px);
+}
+
+.headerweg li:nth-child(even) {
+    transform: translateX(2000px);
+}
+
+button {
+    background-color: #FF0055;
+    color: #330011;
+    font-family: cursive;
+    font-size: 50px;
+    padding: 15px;
+    margin: 15px;
+    transition-property: all;
+    transition-duration: 1000ms;
+    transition-delay: 1750ms;
+}
+
+.headerweg button {
+    font-size: 1px;
+    padding: 0;
 }
 
 main {
-    border: solid 8px #FF6696;
-    border-radius: 20px;
-    background-color: #FFCCDC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#knoppen {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.knop {
+    font-family: 'Train One', cursive;
+    font-size: 96px;
+    border: solid 2px #FF0055;
+    border-radius: 5px;
+    background-color: #FF6699;
+    color: #330011;
+    text-align: center;
+    padding: 25px 60px;
+    transition-property: opacity;
+    transition-duration: 1500ms;
+    opacity: 0;
+}
+
+.knop div {
+    font-family: 'Caveat', cursive;
+}
+
+.knop:hover {
+    background-color: #FF99BB;
+    color: #660022;
+    border-color: #FF3377;
+}
+
+#twee {
+    transition-delay: 250ms;
+}
+
+#drie {
+    transition-delay: 500ms;
+}
+
+#vier {
+    transition-delay: 750ms;
+}
+
+#vijf {
+    transition-delay: 1000ms;
+}
+
+#zes {
+    transition-delay: 1250ms;
+}
+
+.knopaan .knop {
+    opacity: 1;
 }
 
 h1 {
     font-size: 40px;
     font-family: fantasy;
-    color: #990030;
-}
-
-p {
-    color: #660020;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 25px;
-}
-
-button {
-    background-color: #FF0051;
-    color: #330010;
-    font-family: cursive;
-    font-size: 50px;
-    padding: 15px;
-    margin: 50px 0;
-}
-
-#grap {
-    font-size: 25px;
-}
-
-footer {
-    border: solid 8px #FF6696;
-    border-radius: 20px;
-    background-color: #FFCCDC;
+    color: #80002A;
     margin: 10px;
 }
 
-#foto {
+.hondenfoto {
+    border: solid 8px #FF6696;
+    border-radius: 20px;
+    background-color: #FFCCDC;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+}
+
+.hondenfoto img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.hondenfoto p {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 24px;
+    color: #FF0055;
+}
+
+.grappenmaker {
+    font-family: 'Sacramento', cursive;
+    font-size: 64px;
+    color: #FF0055;
+    margin: 50px 20px;
+    width: 75vw;
+}
+
+.nasafoto {
+    background-color: #80002A;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 15px;
+    margin: 10px;
 }
 
-img {
-    width: 60vw;
+.nasafoto h1 {
+    font-size: 40px;
+    font-family: fantasy;
+    color: #FF0055;
+    margin: 10px;    
 }
 
-h2 {
-    color: #660020;
+.nasafoto h2 {
+    color: #FFCCDC;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 25px;
     font-size: 20px;
 }
 
-div {
-    color: #660020;
+.nasafoto img {
+    width: 60vw;
+}
+
+.nasafoto div {
+    color: #FF6696;
+    font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 25px;
     width: 60vw;
     text-align: left;
-}
-
-@media (min-width: 950px) {
-    main {
-        width: 900px;
-    }
 }

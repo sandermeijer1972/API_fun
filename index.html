@@ -1,21 +1,43 @@
 <!DOCTYPE html>
  <html>
     <head>
-        <title> Grappenmaker </title>
+        <title> API fun time </title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
         <script defer src="script.js"></script>
     </head>
-    <body>
-        <main>
-            <h1>Grappenmaker</h1>
-            <p>klik op de button voor een nieuwe (Engelstalige) grap</p>
-            <button id="nieuwegrap">klikken maar!</button>
-            <p id="grap"></p>
+    <body id="body">
+        <header id="uitleg">
+            <nav>
+                <p id="uitleg1">
+                    Als je zo op de button klikt, verschijnen er 6 knoppen. Als je op 1 van die knoppen klikt, gebeurt er het volgende:
+                </p>
+                <ul id="uitleg2">
+                    <li>Elke keer als je op knop 1 klikt, verschijnt er een foto van een hond</li>
+                    <li>Als je op knop 2 klikt, verschijnt er elke keer een nieuwe (Engelstalige) grap</li>
+                    <li>Elke keer als je op knop 3 klikt, verschijnt er een foto van een gerecht</li>
+                    <li>Als je op knop 4 klikt, krijg je een leuk (Engelstalig) weetje van deze dag</li>
+                    <li>Elke keer als je op knop 5 klikt, verschijnt er een foto van een kat</li>
+                    <li>Als je op knop 6 klikt, krijg je de astronomie foto van de dag van NASA te zien</li>
+                </ul>
+                <button id="uitleg3">klikken maar!</button>
+            </nav>            
+        </header>
+        <main id="main">
+            <ul id="knoppen">
+                <li id="een" class="knop">1</li>
+                <li id="twee" class="knop">2</li>
+                <li id="drie" class="knop">3</li>
+                <li id="vier" class="knop">4</li>
+                <li id="vijf" class="knop">5</li>
+                <li id="zes" class="knop">6</li>
+            </ul>
+            <div id="resultaat"></div>
         </main>
-        <footer id="foto">
-            <h1>NASA foto</h1>
-            <p>klik op de button voor de astronomie-foto van de dag</p>
-            <button id="nasafoto">klik voor foto</button>
-        </footer>
+        <footer></footer>
     </body>
  </html>
