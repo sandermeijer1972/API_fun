@@ -20,6 +20,7 @@ button.addEventListener("click", laatKnoppenZien);
 const emptyResults = () => {
     result.classList.remove("hondenfoto");
     result.classList.remove("grappenmaker");
+    result.classList.remove("gerecht");
     result.classList.remove("nasafoto");
     result.innerHTML = '';
 };
@@ -83,7 +84,80 @@ const jokeButton = document.getElementById("twee");
 jokeButton.addEventListener("click", addJokeToDOM);
 
 
-//KNOP 3
+//KNOP 3 GERECHTEN
+
+const getDish = async function() {
+    const apiURL = `https://www.themealdb.com/api/json/v1/1/random.php`;
+    try {
+        const res = await fetch(apiURL);
+        const data = await res.json();
+        console.log("willekeurig gerecht: ", data);
+        return data;
+    } catch(error) {
+        console.log(error);
+    }
+};
+
+const addDishToDOM = async function() {
+    emptyResults();
+    const dish = await getDish();
+    result.classList.add("gerecht");
+    const newH1 = document.createElement('h1');
+    newH1.innerText = "wat eten we vanavond?";
+    result.appendChild(newH1);
+    const newH2 = document.createElement('h2');
+    newH2.innerText = dish.meals[0].strMeal;
+    result.appendChild(newH2);
+    const newP = document.createElement('p');
+    newP.classList.add("ingredienten");
+    const newImg = document.createElement('img');
+    newImg.src = dish.meals[0].strMealThumb;    
+    newP.appendChild(newImg);
+    const newDivList = document.createElement('div');
+    const newH3 = document.createElement('h3');
+    newH3.innerText = "boodschappenlijst";
+    newDivList.appendChild(newH3);
+    const newPI1 = document.createElement('p');
+    newPI1.innerText = (dish.meals[0].strMeasure1 + " " + dish.meals[0].strIngredient1);
+    newDivList.appendChild(newPI1);
+    const newPI2 = document.createElement('p');
+    newPI2.innerText = (dish.meals[0].strMeasure2 + " " + dish.meals[0].strIngredient2);
+    newDivList.appendChild(newPI2);
+    const newPI3 = document.createElement('p');
+    newPI3.innerText = (dish.meals[0].strMeasure3 + " " + dish.meals[0].strIngredient3);
+    newDivList.appendChild(newPI3);
+    const newPI4 = document.createElement('p');
+    newPI4.innerText = (dish.meals[0].strMeasure4 + " " + dish.meals[0].strIngredient4);
+    newDivList.appendChild(newPI4);
+    const newPI5 = document.createElement('p');
+    newPI5.innerText = (dish.meals[0].strMeasure5 + " " + dish.meals[0].strIngredient5);
+    newDivList.appendChild(newPI5);
+    const newPI6 = document.createElement('p');
+    newPI6.innerText = (dish.meals[0].strMeasure6 + " " + dish.meals[0].strIngredient6);
+    newDivList.appendChild(newPI6);
+    const newPI7 = document.createElement('p');
+    newPI7.innerText = (dish.meals[0].strMeasure7 + " " + dish.meals[0].strIngredient7);
+    newDivList.appendChild(newPI7);
+    const newPI8 = document.createElement('p');
+    newPI8.innerText = (dish.meals[0].strMeasure8 + " " + dish.meals[0].strIngredient8);
+    newDivList.appendChild(newPI8);
+    const newPI9 = document.createElement('p');
+    newPI9.innerText = (dish.meals[0].strMeasure9 + " " + dish.meals[0].strIngredient9);
+    newDivList.appendChild(newPI9);
+    const newPI10 = document.createElement('p');
+    newPI10.innerText = (dish.meals[0].strMeasure10 + " " + dish.meals[0].strIngredient10);
+    newDivList.appendChild(newPI10);
+    newP.appendChild(newDivList);
+    result.appendChild(newP);
+    const newA = document.createElement('a');
+    newA.innerText = "klik hier voor de video";
+    newA.href = dish.meals[0].strYoutube;
+    newA.target = "_blank";
+    result.appendChild(newA);
+};
+
+const dishButton = document.getElementById("drie");
+dishButton.addEventListener("click", addDishToDOM);
 
 
 //KNOP 6 NASA FOTO

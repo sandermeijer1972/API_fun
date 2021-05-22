@@ -198,6 +198,49 @@ h1 {
     width: 75vw;
 }
 
+.gerecht {
+    background-color: #FF0055;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.gerecht h2 {
+    color: #FFCCDC;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 24px;
+}
+
+.gerecht img {
+    width: 80vw;
+}
+
+.gerecht div {
+    width: 80vw;
+    background-color: #FF3377;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #660022;
+    font-size: 20px;
+    padding: 15px 0;
+    margin: 10px;
+}
+
+.gerecht h3 {
+    font-size: 22px;
+    text-decoration-style: double;
+}
+
+.gerecht a {
+    text-decoration: none;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    color: #FF99BB;
+}
+
+.gerecht a:hover {
+    color: #FFB3CC;
+    font-size: 41px;
+}
+
 .nasafoto {
     background-color: #80002A;
     display: flex;
@@ -232,4 +275,21 @@ h1 {
     margin: 25px;
     width: 60vw;
     text-align: left;
+}
+
+@media(min-width: 800px) {
+    .ingredienten {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 85vw;
+    }
+    .ingredienten img {
+        width: 60vw;
+    }
+    .ingredienten div {
+        width: 30vw;
+        margin: 0 10px;
+        padding: 0;
+    }
 }
