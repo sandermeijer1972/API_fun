@@ -21,6 +21,7 @@ const emptyResults = () => {
     result.classList.remove("hondenfoto");
     result.classList.remove("grappenmaker");
     result.classList.remove("gerecht");
+    result.classList.remove("kattenfoto");
     result.classList.remove("nasafoto");
     result.innerHTML = '';
 };
@@ -147,6 +148,12 @@ const addDishToDOM = async function() {
     const newPI10 = document.createElement('p');
     newPI10.innerText = (dish.meals[0].strMeasure10 + " " + dish.meals[0].strIngredient10);
     newDivList.appendChild(newPI10);
+    const newPI11 = document.createElement('p');
+    newPI11.innerText = (dish.meals[0].strMeasure11 + " " + dish.meals[0].strIngredient11);
+    newDivList.appendChild(newPI11);
+    const newPI12 = document.createElement('p');
+    newPI12.innerText = (dish.meals[0].strMeasure12 + " " + dish.meals[0].strIngredient12);
+    newDivList.appendChild(newPI12);
     newP.appendChild(newDivList);
     result.appendChild(newP);
     const newA = document.createElement('a');
@@ -158,6 +165,45 @@ const addDishToDOM = async function() {
 
 const dishButton = document.getElementById("drie");
 dishButton.addEventListener("click", addDishToDOM);
+
+//KNOP 5 KATTEN FOTO
+
+const catAPI_KEY = "fac80b6b-50f5-4097-ac11-46bd227ef4a4";
+
+const getCat = async function() {
+    const apiURL = `https://api.thecatapi.com/v1/images/search?format=json`;
+    try {
+        const res = await fetch(apiURL);
+        const data = await res.json();
+        console.log("willekeurige kat: ", data);
+        return data;
+    } catch(error) {
+        console.log(error);
+    }
+};
+
+const addCatToDOM = async function() {
+    emptyResults();
+    const cat1 = await getCat();
+    const cat2 = await getCat();
+    result.classList.add("kattenfoto");
+    const newH1 = document.createElement('h1');
+    newH1.innerText = "2 Katten Foto's";
+    result.appendChild(newH1);
+    const newDiv = document.createElement('div');
+    newDiv.classList.add("fotos");
+    const newImgCat1 = document.createElement('img');
+    newImgCat1.src = (cat1[0].url);
+    newDiv.appendChild(newImgCat1);
+    const newImgCat2 = document.createElement('img');
+    newImgCat2.src = (cat2[0].url);
+    newDiv.appendChild(newImgCat2);
+    result.appendChild(newDiv);    
+}
+
+const catButton = document.getElementById("vijf");
+catButton.addEventListener("click", addCatToDOM);
+
 
 
 //KNOP 6 NASA FOTO
