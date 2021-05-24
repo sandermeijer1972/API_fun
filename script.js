@@ -185,7 +185,7 @@ const month = (date.getMonth())+1;
 const day = date.getDate();
 
 const getDatumWeetje = async function() {
-    const apiURL = `http://numbersapi.com/${month}/${day}/date`;
+    const apiURL = `https://cors-anywhere.herokuapp.com/http://numbersapi.com/${month}/${day}/date`;
     try {
         const res = await fetch(apiURL);
         const data = await res.text();
