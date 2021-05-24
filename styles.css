@@ -112,28 +112,45 @@ main {
     justify-content: center;
 }
 
-.knop {
-    font-family: 'Train One', cursive;
-    font-size: 96px;
+.knop {    
     border: solid 2px #FF0055;
     border-radius: 5px;
-    background-color: #FF6699;
-    color: #330011;
+    background-color: #FF6699;    
     text-align: center;
-    padding: 25px 60px;
+    padding: 10px;
     transition-property: opacity;
     transition-duration: 1500ms;
     opacity: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.knop p {
+    font-family: 'Train One', cursive;
+    font-size: 96px;
+    color: #330011;
+    margin: 0;
+    margin-top: 25px;
 }
 
 .knop div {
-    font-family: 'Caveat', cursive;
+    font-family: 'Codystar', cursive;
+    font-size: 30px;
+    color: #FF6699;
+    margin: 0;
 }
 
 .knop:hover {
-    background-color: #FF99BB;
-    color: #660022;
+    background-color: #FF99BB;    
     border-color: #FF3377;
+}
+
+.knop:hover p {
+    color: #660022;
+}
+
+.knop:hover div {
+    color: #330011;
 }
 
 #twee {
@@ -239,6 +256,23 @@ h1 {
 .gerecht a:hover {
     color: #FFB3CC;
     font-size: 41px;
+}
+
+.datumweetje p {
+    width: 75vw;
+    margin: 40px;
+    color: #FF3377;
+    font-size: 20px;
+    font-family: 'Mukta', sans-serif;
+}
+
+.datumweetje div {
+    width: 80vw;
+    margin: 20px;
+    color: #FFB3CC;
+    font-family: 'Fredoka One', cursive;
+    font-size: 50px;
+    line-height: 1.5;
 }
 
 .kattenfoto {

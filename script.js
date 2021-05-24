@@ -21,6 +21,7 @@ const emptyResults = () => {
     result.classList.remove("hondenfoto");
     result.classList.remove("grappenmaker");
     result.classList.remove("gerecht");
+    result.classList.remove("datumweetje");
     result.classList.remove("kattenfoto");
     result.classList.remove("nasafoto");
     result.innerHTML = '';
@@ -154,6 +155,15 @@ const addDishToDOM = async function() {
     const newPI12 = document.createElement('p');
     newPI12.innerText = (dish.meals[0].strMeasure12 + " " + dish.meals[0].strIngredient12);
     newDivList.appendChild(newPI12);
+    const newPI13 = document.createElement('p');
+    newPI13.innerText = (dish.meals[0].strMeasure13 + " " + dish.meals[0].strIngredient13);
+    newDivList.appendChild(newPI13);
+    const newPI14 = document.createElement('p');
+    newPI14.innerText = (dish.meals[0].strMeasure14 + " " + dish.meals[0].strIngredient14);
+    newDivList.appendChild(newPI14);
+    const newPI15 = document.createElement('p');
+    newPI15.innerText = (dish.meals[0].strMeasure15 + " " + dish.meals[0].strIngredient15);
+    newDivList.appendChild(newPI15);
     newP.appendChild(newDivList);
     result.appendChild(newP);
     const newA = document.createElement('a');
@@ -166,9 +176,43 @@ const addDishToDOM = async function() {
 const dishButton = document.getElementById("drie");
 dishButton.addEventListener("click", addDishToDOM);
 
-//KNOP 5 KATTEN FOTO
 
-const catAPI_KEY = "fac80b6b-50f5-4097-ac11-46bd227ef4a4";
+//KNOP 4 DATUM WEETJE
+
+const date = new Date();
+console.log(date);
+const month = (date.getMonth())+1;
+const day = date.getDate();
+
+const getDatumWeetje = async function() {
+    const apiURL = `http://numbersapi.com/${month}/${day}/date`;
+    try {
+        const res = await fetch(apiURL);
+        const data = await res.text();
+        console.log("weetje van de dag: ", data);
+        return data;
+    } catch(error) {
+        console.log(error);
+    }
+};
+
+const addDatumWeetjeToDOM = async function() {
+    emptyResults();
+    const weetje = await getDatumWeetje();
+    result.classList.add("datumweetje");
+    const newPDate = document.createElement('p');
+    newPDate.innerText = ("het is vandaag: " + date);
+    result.appendChild(newPDate);
+    const newDivWeetje = document.createElement('div');
+    newDivWeetje.innerText = weetje;
+    result.appendChild(newDivWeetje);
+};
+
+const dateButton = document.getElementById("vier");
+dateButton.addEventListener("click", addDatumWeetjeToDOM);
+
+
+//KNOP 5 KATTENFOTO'S
 
 const getCat = async function() {
     const apiURL = `https://api.thecatapi.com/v1/images/search?format=json`;
@@ -203,7 +247,6 @@ const addCatToDOM = async function() {
 
 const catButton = document.getElementById("vijf");
 catButton.addEventListener("click", addCatToDOM);
-
 
 
 //KNOP 6 NASA FOTO
