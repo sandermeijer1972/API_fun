@@ -73,6 +73,22 @@ header li:nth-child(6) {
     transition-delay: 1500ms;
 }
 
+header li:nth-child(7) {
+    transition-delay: 1750ms;
+}
+
+header li:nth-child(8) {
+    transition-delay: 2000ms;
+}
+
+header li:nth-child(9) {
+    transition-delay: 2250ms;
+}
+
+header li:nth-child(10) {
+    transition-delay: 2500ms;
+}
+
 .headerweg li:nth-child(odd) {
     transform: translateX(-1200px);
 }
@@ -89,8 +105,8 @@ button {
     padding: 15px;
     margin: 15px;
     transition-property: all;
-    transition-duration: 1000ms;
-    transition-delay: 1750ms;
+    transition-duration: 1250ms;
+    transition-delay: 2750ms;
     cursor: pointer;
 }
 
@@ -173,6 +189,22 @@ main {
 
 #zes {
     transition-delay: 1250ms;
+}
+
+#zeven {
+    transition-delay: 1500ms;
+}
+
+#acht {
+    transition-delay: 1750ms;
+}
+
+#negen {
+    transition-delay: 2000ms;
+}
+
+#tien {
+    transition-delay: 2250ms;
 }
 
 .knopaan .knop {
@@ -327,6 +359,10 @@ h1 {
     width: 60vw;
 }
 
+.nasafoto video {
+    width: 60vw;
+}
+
 .nasafoto div {
     color: #FF6696;
     font-size: 18px;
@@ -334,6 +370,39 @@ h1 {
     margin: 25px;
     width: 60vw;
     text-align: left;
+}
+
+.trumptweet {
+    border: solid 8px #FF6696;
+    border-radius: 20px;
+    background-color: #FFCCDC;
+    margin: 20px;
+    padding: 20px;
+    width: 50vw;
+    background-image: url("twitter.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.tweet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: #FF0055;
+}
+
+.tweet img {
+    border: solid 3px #FF0055;
+    border-radius: 10px; 
 }
 
 @media(min-width: 800px) {

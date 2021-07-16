@@ -9,10 +9,10 @@ const laatKnoppenZien = function() {
     setTimeout(() => {
         uitlegText.innerHTML = '';
         body.classList.add("dark");
-    }, 3250);
+    }, 4000);
     setTimeout(() => {
         knoppen.classList.add("knopaan");
-    }, 4500);
+    }, 5500);
 };
 const button = document.getElementById("uitleg3");
 button.addEventListener("click", laatKnoppenZien);
@@ -24,6 +24,7 @@ const emptyResults = () => {
     result.classList.remove("datumweetje");
     result.classList.remove("kattenfoto");
     result.classList.remove("nasafoto");
+    result.classList.remove("trumptweet");
     result.innerHTML = '';
 };
 
@@ -269,22 +270,73 @@ const addNasaPhotoToDOM = async function() {
     emptyResults();
     const photo = await getNasaPhoto();
     result.classList.add("nasafoto");
-    const newH1 = document.createElement('h1');
-    newH1.innerText = "NASA 'foto van de dag'";
+    const newH1 = document.createElement('h1');    
+    if (photo.media_type == "video") {
+        newH1.innerText = "NASA 'video van de dag'";
+    } else {
+        newH1.innerText = "NASA 'foto van de dag'";
+    };
     result.appendChild(newH1);
     const newTitle = document.createElement('h2');
     newTitle.innerText = (photo.title);
     result.appendChild(newTitle);
-    const newImg = document.createElement('img');
-    newImg.src = (photo.hdurl);
-    result.appendChild(newImg);
+    if (photo.media_type == "video") {
+        const newVideo = document.createElement('video');
+        const newSource = document.createElement('source');
+        newSource.src = photo.hdurl;
+        newVideo.appendChild(newSource);
+        result.appendChild(newVideo);
+    } else {
+        const newImg = document.createElement('img');
+        newImg.src = (photo.hdurl);
+        result.appendChild(newImg);
+    };    
     const newDiv = document.createElement('div');
     newDiv.innerText = (photo.explanation);
     result.appendChild(newDiv);
-}
+};
 
 const nasaButton = document.getElementById("zes");
 nasaButton.addEventListener("click", addNasaPhotoToDOM);
 
 
+//KNOP 7 DONALD TRUMP TWEET
 
+const getTrumpTweet = async function() {
+    const apiURL = `https://tronalddump.io/random/quote`;
+    try {
+        const res = await fetch(apiURL);
+        const data = await res.json();
+        console.log("Trump-Tweet: ", data);
+        return data;
+    } catch(error) {
+        console.log(error);
+    }
+};
+
+const addTrumpTweetToDOM = async function() {
+    emptyResults();
+    const tweet = await getTrumpTweet();
+    const tweetDatum = tweet.appeared_at.split("T")[0];
+    result.classList.add("trumptweet");
+    const newH1 = document.createElement('h1');
+    newH1.innerText = "Donald Trump on Twitter";
+    result.appendChild(newH1);
+    const newDiv = document.createElement('div');
+    newDiv.classList.add("tweet");
+    const newImg = document.createElement('img');
+    newImg.src = "trump.jpg";
+    newDiv.appendChild(newImg);
+    const newDivTweet = document.createElement('div');
+    const newPDate = document.createElement('p');
+    newPDate.innerText = ("datum: " + tweetDatum.split("-")[2] + " - " + tweetDatum.split("-")[1] + " - " + tweetDatum.split("-")[0]);
+    newDivTweet.appendChild(newPDate);
+    const newPTweet = document.createElement('p');
+    newPTweet.innerText = tweet.value;
+    newDivTweet.appendChild(newPTweet);
+    newDiv.appendChild(newDivTweet);
+    result.appendChild(newDiv);
+};
+
+const trumpButton = document.getElementById("zeven");
+trumpButton.addEventListener("click", addTrumpTweetToDOM);
