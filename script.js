@@ -25,6 +25,7 @@ const emptyResults = () => {
     result.classList.remove("kattenfoto");
     result.classList.remove("nasafoto");
     result.classList.remove("trumptweet");
+    result.classList.remove("panda");
     result.innerHTML = '';
 };
 
@@ -325,7 +326,7 @@ const addTrumpTweetToDOM = async function() {
     const newDiv = document.createElement('div');
     newDiv.classList.add("tweet");
     const newImg = document.createElement('img');
-    newImg.src = "trump.jpg";
+    newImg.src = "./pictures/trump.jpg";
     newDiv.appendChild(newImg);
     const newDivTweet = document.createElement('div');
     const newPDate = document.createElement('p');
@@ -340,3 +341,43 @@ const addTrumpTweetToDOM = async function() {
 
 const trumpButton = document.getElementById("zeven");
 trumpButton.addEventListener("click", addTrumpTweetToDOM);
+
+
+//KNOP 8 PANDABEER
+
+
+const getPandaFact = async function() {
+    const apiURL = `https://some-random-api.ml/facts/panda`;
+    try {
+        const res = await fetch(apiURL);
+        const data = await res.json();
+        console.log("panda-feitje: ", data);
+        return data;
+    } catch(error) {
+        console.log(error);
+    }
+};
+
+const addPandaToDOM = async function() {
+    emptyResults();
+    const pandaFact = await getPandaFact();
+    result.classList.add("panda");
+    const newH1 = document.createElement('h1');
+    newH1.innerText = "de pandabeer";
+    result.appendChild(newH1);
+    const newDiv = document.createElement('div');
+    newDiv.classList.add("pandabeer");
+    const newImg1 = document.createElement('img');
+    newImg1.src = "./pictures/panda1.gif";
+    newDiv.appendChild(newImg1);
+    const newP = document.createElement('p');
+    newP.innerText = pandaFact.fact;
+    newDiv.appendChild(newP);
+    const newImg2 = document.createElement('img');
+    newImg2.src = "./pictures/panda2.gif";
+    newDiv.appendChild(newImg2);
+    result.appendChild(newDiv);
+};
+
+const pandaButton = document.getElementById("acht");
+pandaButton.addEventListener("click", addPandaToDOM);
