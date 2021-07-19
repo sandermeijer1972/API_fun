@@ -430,7 +430,7 @@ insultButton.addEventListener("click", addInsultToDOM);
 const getCity = async function() {
     const randomNumber = Math.floor(Math.random() * 23612 );
     console.log(randomNumber);
-    const apiURL = `http://geodb-free-service.wirefreethought.com/v1/geo/cities?limit=1&offset=${randomNumber}&hateoasMode=off`;
+    const apiURL = `https://cors-anywhere.herokuapp.com/http://geodb-free-service.wirefreethought.com/v1/geo/cities?limit=1&offset=${randomNumber}&hateoasMode=off`;
     try {
         const res = await fetch(apiURL);
         const data = await res.json();
