@@ -27,6 +27,7 @@ const emptyResults = () => {
     result.classList.remove("trumptweet");
     result.classList.remove("panda");
     result.classList.remove("belediging");
+    result.classList.remove("wereldplaats");
     result.innerHTML = '';
 };
 
@@ -422,3 +423,42 @@ const addInsultToDOM = async function() {
 
 const insultButton = document.getElementById("negen");
 insultButton.addEventListener("click", addInsultToDOM);
+
+
+//KNOP 10 RANDOM STAD OP AARDE
+
+const getCity = async function() {
+    const randomNumber = Math.floor(Math.random() * 23612 );
+    console.log(randomNumber);
+    const apiURL = `http://geodb-free-service.wirefreethought.com/v1/geo/cities?limit=1&offset=${randomNumber}&hateoasMode=off`;
+    try {
+        const res = await fetch(apiURL);
+        const data = await res.json();
+        console.log("stad: ", data);
+        return data;
+    } catch(error) {
+        console.log(error);
+    }
+};
+
+const addCityToDOM = async function() {
+    emptyResults();
+    const city = await getCity();
+    result.classList.add("wereldplaats");
+    let soort;
+    if (city.data[0].type === "CITY") {
+        soort = "stad";
+    } else if (city.data[0].type === "ADM2") {
+        soort = "gemeente";
+    };
+    let halfrond;
+    if (city.data[0].latitude > 0) {
+        halfrond = "Noordelijk";
+    } else {
+        halfrond = "Zuidelijk";
+    };
+    result.innerText = ("De " + soort + " " + city.data[0].name.toUpperCase() + ", gelegen in de provincie " + city.data[0].region + " in " + city.data[0].country + " op het " + halfrond + " Halfrond heeft " + city.data[0].population + " inwoners.") 
+};
+
+const cityButton = document.getElementById("tien");
+cityButton.addEventListener("click", addCityToDOM);

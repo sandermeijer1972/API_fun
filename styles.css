@@ -463,6 +463,15 @@ h1 {
     margin-top: 0;
 }
 
+.wereldplaats {
+    margin-top: 60px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+    color: #FFE6EE;
+    width: 75vw;
+    line-height: 1.5;
+}
+
 @media(min-width: 800px) {
     .ingredienten {
         display: flex;
