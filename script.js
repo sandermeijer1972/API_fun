@@ -26,6 +26,7 @@ const emptyResults = () => {
     result.classList.remove("nasafoto");
     result.classList.remove("trumptweet");
     result.classList.remove("panda");
+    result.classList.remove("belediging");
     result.innerHTML = '';
 };
 
@@ -398,23 +399,6 @@ pandaButton.addEventListener("click", addPandaToDOM);
 
 //KNOP 9 BELEDIGING
 
-
-// zo was de fetch eerst: 
-
-// const getInsult = async function() {
-//     const apiURL = `https://evilinsult.com/generate_insult.php?lang=en&type=json`;
-//     try {
-//         const res = await fetch((apiURL), {
-//             mode: 'no-cors',
-//         });
-//         const data = await res.json();
-//         console.log("belediging: ", data);
-//         return data;
-//     } catch(error) {
-//         console.log(error);
-//     }
-// };
-
 const getInsult = async function() {
     const apiURL = `https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json`;
     try {
@@ -427,4 +411,14 @@ const getInsult = async function() {
     }
 };
 
-getInsult();
+const addInsultToDOM = async function() {
+    emptyResults();
+    const insult = await getInsult();
+    result.classList.add("belediging");
+    const newPInsult = document.createElement('p');
+    newPInsult.innerText = insult.insult;
+    result.appendChild(newPInsult);
+};
+
+const insultButton = document.getElementById("negen");
+insultButton.addEventListener("click", addInsultToDOM);
