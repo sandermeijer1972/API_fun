@@ -1,19 +1,19 @@
-#API-fun
+# API-fun
 
 Voor deze opdracht voor de opleiding Front-End Development van Winc Academy moest er geoefend worden met het aanroepen van API's. Er kon gekozen worden uit 3 verschillende, waarvan ik er 2 gebruikt heb. Ik heb zelf nog 8 API's opgezocht om ook goed te oefenen met de omschrijving.
 
 
-##Netlify
+## Netlify
 
 de link naar Netlify: https://knoppen-pagina.netlify.app
 
 
-###CORS
+### CORS
 
 Met het deployen naar Netlify kreeg ik wat problemen met de fetch naar een http. Dit is opgevangen door het te koppelen aan de cors-anywhere.herokuapp. Hierbij krijg je beperkt toegang tot de aangeroepen data. Bij **knop 4** is een link toegevoegd om via de herokuapp toegang te verkrijgen.
 
 
-###API's
+### API's
 
 Hierbij de 10 API's waar ik gebruik van maak bij deze opdracht:
 
@@ -29,6 +29,6 @@ Hierbij de 10 API's waar ik gebruik van maak bij deze opdracht:
 - **wereldplaats**: bij elke klik krijg je wat informatie over een willekeurige stad of gemeente ergens op de wereld
 
 
-###transities
+### Transities
 
 Ik heb bij het openen van de pagina veel gebruik gemaakt van transities, zowel met pure CSS als ook met JavaScript.
