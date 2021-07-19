@@ -194,7 +194,7 @@ const getDatumWeetje = async function() {
         console.log("weetje van de dag: ", data);
         return data;
     } catch(error) {
-        console.log(error);
+        console.log("error: " + error);
     }
 };
 
@@ -203,11 +203,24 @@ const addDatumWeetjeToDOM = async function() {
     const weetje = await getDatumWeetje();
     result.classList.add("datumweetje");
     const newPDate = document.createElement('p');
+    newPDate.classList.add("datum");
     newPDate.innerText = ("het is vandaag: " + date);
     result.appendChild(newPDate);
     const newDivWeetje = document.createElement('div');
     newDivWeetje.innerText = weetje;
-    result.appendChild(newDivWeetje);
+    result.appendChild(newDivWeetje); 
+    const newPUitleg = document.createElement('p');
+    newPUitleg.classList.add("uitleg");
+    newPUitleg.innerText = "Als hierboven iets staat met 'corsdemo', betekent dat dat er een klein probleempje is. Om dit op te lossen, klik dan op de link hieronder. Er opent dan een nieuwe pagina, waar je kan klikken om toegang te krijgen tot de data. Klik daarna hier op deze pagina opnieuw op knop 4.";
+    result.appendChild(newPUitleg);
+    const newPLink = document.createElement('p');
+    newPLink.classList.add("link");
+    const newA = document.createElement('a');
+    newA.target = "_blank";
+    newA.href = "https://cors-anywhere.herokuapp.com/corsdemo";
+    newA.innerText = "===> klik voor toegang tot de data <===";
+    newPLink.appendChild(newA);
+    result.appendChild(newPLink);          
 };
 
 const dateButton = document.getElementById("vier");
@@ -381,3 +394,37 @@ const addPandaToDOM = async function() {
 
 const pandaButton = document.getElementById("acht");
 pandaButton.addEventListener("click", addPandaToDOM);
+
+
+//KNOP 9 BELEDIGING
+
+
+// zo was de fetch eerst: 
+
+// const getInsult = async function() {
+//     const apiURL = `https://evilinsult.com/generate_insult.php?lang=en&type=json`;
+//     try {
+//         const res = await fetch((apiURL), {
+//             mode: 'no-cors',
+//         });
+//         const data = await res.json();
+//         console.log("belediging: ", data);
+//         return data;
+//     } catch(error) {
+//         console.log(error);
+//     }
+// };
+
+const getInsult = async function() {
+    const apiURL = `https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json`;
+    try {
+        const res = await fetch(apiURL);
+        const data = await res.json();
+        console.log("belediging: ", data);
+        return data;
+    } catch(error) {
+        console.log(error);
+    }
+};
+
+getInsult();

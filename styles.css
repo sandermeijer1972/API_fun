@@ -291,11 +291,17 @@ h1 {
     font-size: 41px;
 }
 
-.datumweetje p {
+.datumweetje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datum {
     width: 75vw;
     margin: 40px;
     color: #FF3377;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Mukta', sans-serif;
 }
 
@@ -306,6 +312,31 @@ h1 {
     font-family: 'Fredoka One', cursive;
     font-size: 50px;
     line-height: 1.5;
+}
+
+.uitleg {
+    width: 60vw;
+    margin-top: 50px;
+    color: #FF0055;
+    font-size: 20px;
+}
+
+.link {
+    width: 60vw;
+    font-size: 22px;
+}
+
+.link a:link {
+    text-decoration: none;
+    color: #FFE6EE;
+}
+
+.link a:visited {
+    color: #FFE6EE;
+}
+
+.link a:hover {
+    color: #FFB3CC;
 }
 
 .kattenfoto {
@@ -409,6 +440,16 @@ h1 {
     font-size: 30px;
     color: #660022;
     margin: 15px;
+}
+
+.belediging {
+    width: 80vw;
+    height: 60vw;
+    background: url(./pictures/schreeuw.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    background-color: #660022;
 }
 
 @media(min-width: 800px) {
