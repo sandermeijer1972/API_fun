@@ -120,6 +120,11 @@
     width: 60vw;
 }
 
+.nasafoto iframe {
+    width: 60vw;
+    height: 60vw;
+}
+
 .nasafoto div {
     color: #FF6696;
     font-size: 18px;

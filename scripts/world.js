@@ -125,11 +125,9 @@ const addNasaPhotoToDOM = async function() {
     newTitle.innerText = (photo.title);
     result.appendChild(newTitle);
     if (photo.media_type == "video") {
-        const newVideo = document.createElement('video');
-        const newSource = document.createElement('source');
-        newSource.src = photo.hdurl;
-        newVideo.appendChild(newSource);
-        result.appendChild(newVideo);
+        const newFrame = document.createElement('iframe');
+        newFrame.src = photo.url;          
+        result.appendChild(newFrame);
     } else {
         const newImg = document.createElement('img');
         newImg.src = (photo.hdurl);
