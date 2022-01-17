@@ -51,7 +51,7 @@ const month = (date.getMonth())+1;
 const day = date.getDate();
 
 const getDatumWeetje = async function() {
-    const apiURL = `https://cors-anywhere.herokuapp.com/http://numbersapi.com/${month}/${day}/date`;
+    const apiURL = `http://numbersapi.com/${month}/${day}/date`;
     try {
         const res = await fetch(apiURL);
         const data = await res.text();
@@ -128,7 +128,7 @@ const getPandaFact = async function() {
 // BELEDIGING
 
 const getInsult = async function() {
-    const apiURL = `https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json`;
+    const apiURL = `https://evilinsult.com/generate_insult.php?lang=en&type=json`;
     try {
         const res = await fetch(apiURL);
         const data = await res.json();
@@ -145,7 +145,7 @@ const getInsult = async function() {
 const getCity = async function() {
     const randomNumber = Math.floor(Math.random() * 23612 );
     console.log(randomNumber);
-    const apiURL = `https://cors-anywhere.herokuapp.com/http://geodb-free-service.wirefreethought.com/v1/geo/cities?limit=1&offset=${randomNumber}&hateoasMode=off`;
+    const apiURL = `http://geodb-free-service.wirefreethought.com/v1/geo/cities?limit=1&offset=${randomNumber}&hateoasMode=off`;
     try {
         const res = await fetch(apiURL);
         const data = await res.json();
