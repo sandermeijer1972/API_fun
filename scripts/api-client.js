@@ -80,7 +80,7 @@ const getCat = async function() {
 
 // NASA FOTO
 
-const nasaAPI_KEY = "8daInjHrDoELTFFexvoAAeAORS7mOdcqeIBQFGX2";
+const nasaAPI_KEY = "0ZlF2vz4csVYqwNMXIDDWXtt9bvrO6NBCovaO7BM";
 
 const getNasaPhoto = async function() {
     const apiURL = `https://api.nasa.gov/planetary/apod?api_key=${nasaAPI_KEY}`;
