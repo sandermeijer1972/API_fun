@@ -79,13 +79,90 @@ dishButton.addEventListener("click", addDishToDOM);
 
 //KNOP 4 DATUM WEETJE
 
+const weekDag = () => {
+    const dayNumb = date.getDay()
+    console.log(dayNumb);
+    let dag;
+    switch(dayNumb) {
+        case 0:
+            dag = "zondag";
+            break;
+        case 1:
+            dag = "maandag";
+            break;
+        case 2:
+            dag = "dinsdag";
+            break;
+        case 3:
+            dag = "woensdag";
+            break;
+        case 4:
+            dag ="dondedag";
+            break;
+        case 5:
+            dag = "vrijdag";
+            break;
+        case 6:
+            dag = "zaterdag";
+            break;
+    };
+    console.log(dag);
+    return dag;
+};
+
+const maandJaar = () => {
+    let maand;
+    switch(month) {
+        case 1:
+            maand = "januari";
+            break;
+        case 2:
+            maand = "februari";
+            break;
+        case 3:
+            maand = "maart";
+            break;
+        case 4:
+            maand = "april";
+            break;
+        case 5:
+            maand = "mei";
+            break;
+        case 6:
+            maand = "juni";
+            break;
+        case 7:
+            maand = "juli";
+            break;
+        case 8:
+            maand = "augustus";
+            break;
+        case 9:
+            maand = "september";
+            break;
+        case 10:
+            maand = "oktober";
+            break;
+        case 11:
+            maand = "november";
+            break;
+        case 12:
+            maand = "december";
+            break;
+    };
+    console.log(maand);
+    return maand;
+};
+
 const addDatumWeetjeToDOM = async function() {
     emptyResults();
+    const dagVanDeWeek = weekDag();
+    const maandVanHetJaar = maandJaar();
     const weetje = await getDatumWeetje();
     result.classList.add("datumweetje");
     const newPDate = document.createElement('p');
     newPDate.classList.add("datum");
-    newPDate.innerText = ("het is vandaag: " + date);
+    newPDate.innerText = ("het is vandaag " + dagVanDeWeek + " " + day + " " + maandVanHetJaar + " " + year);
     result.appendChild(newPDate);
     const newDivWeetje = document.createElement('div');
     newDivWeetje.innerText = weetje;

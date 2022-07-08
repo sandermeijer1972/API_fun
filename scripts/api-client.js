@@ -49,6 +49,7 @@ const date = new Date();
 console.log(date);
 const month = (date.getMonth())+1;
 const day = date.getDate();
+const year = date.getFullYear();
 
 const getDatumWeetje = async function() {
     const apiURL = `https://cors-anywhere.herokuapp.com/http://numbersapi.com/${month}/${day}/date`;
