@@ -64,31 +64,6 @@
     line-height: 1.5;
 }
 
-.uitleg {
-    width: 60vw;
-    margin-top: 50px;
-    color: #FF0055;
-    font-size: 20px;
-}
-
-.link {
-    width: 60vw;
-    font-size: 22px;
-}
-
-.link a:link {
-    text-decoration: none;
-    color: #FFE6EE;
-}
-
-.link a:visited {
-    color: #FFE6EE;
-}
-
-.link a:hover {
-    color: #FFB3CC;
-}
-
 .nasafoto {
     background-color: #80002A;
     display: flex;

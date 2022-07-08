@@ -13,6 +13,22 @@ const laatKnoppenZien = function() {
     setTimeout(() => {
         knoppen.classList.add("knopaan");
     }, 5500);
+    setTimeout(() => {
+        const newP = document.createElement('p');
+        newP.classList.add("uitleg");
+        newP.innerText = "Helaas werken niet alle knoppen even goed. Om de grootste fouten op te vangen, klik dan eerst even op onderstaande link. Je komt dan op een andere pagina terecht, waar je even 'request temporary access to the demo server' moet aanvragen. Daarna kan je hierboven in principe elke knop zo vaak aanklikken als je zelf wil.";
+        result.appendChild(newP);        
+    }, 9000);
+    setTimeout(() => {
+        const newPLink = document.createElement('p');
+        newPLink.classList.add("link");
+        const newA = document.createElement('a');
+        newA.target = "_blank";
+        newA.href = "https://cors-anywhere.herokuapp.com/corsdemo";
+        newA.innerText = "===> klik voor toegang tot de data <===";
+        newPLink.appendChild(newA);
+        result.appendChild(newPLink); 
+    }, 10000);
 };
 const button = document.getElementById("uitleg3");
 button.addEventListener("click", laatKnoppenZien);

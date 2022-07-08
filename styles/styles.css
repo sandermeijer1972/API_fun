@@ -216,3 +216,30 @@ h1 {
     color: #80002A;
     margin: 10px;
 }
+
+.uitleg {
+    width: 60vw;
+    margin-top: 50px;
+    color: #FF0055;
+    font-size: 24px;
+}
+
+.link {
+    width: 60vw;
+    font-size: 30px;
+    
+}
+
+.link a:link {
+    text-decoration: none;
+    color: #FFE6EE;
+}
+
+.link a:visited {
+    color: #FFE6EE;
+}
+
+.link a:hover {
+    color: #FFB3CC;
+    font-size: 32px;
+}

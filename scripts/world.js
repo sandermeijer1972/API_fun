@@ -166,19 +166,7 @@ const addDatumWeetjeToDOM = async function() {
     result.appendChild(newPDate);
     const newDivWeetje = document.createElement('div');
     newDivWeetje.innerText = weetje;
-    result.appendChild(newDivWeetje); 
-    const newPUitleg = document.createElement('p');
-    newPUitleg.classList.add("uitleg");
-    newPUitleg.innerText = "Als hierboven iets staat met 'corsdemo', betekent dat dat er een klein probleempje is. Om dit op te lossen, klik dan op de link hieronder. Er opent dan een nieuwe pagina, waar je kan klikken om toegang te krijgen tot de data. Klik daarna hier op deze pagina opnieuw op knop 4.";
-    result.appendChild(newPUitleg);
-    const newPLink = document.createElement('p');
-    newPLink.classList.add("link");
-    const newA = document.createElement('a');
-    newA.target = "_blank";
-    newA.href = "https://cors-anywhere.herokuapp.com/corsdemo";
-    newA.innerText = "===> klik voor toegang tot de data <===";
-    newPLink.appendChild(newA);
-    result.appendChild(newPLink);          
+    result.appendChild(newDivWeetje);     
 };
 
 const dateButton = document.getElementById("vier");
