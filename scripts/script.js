@@ -32,14 +32,14 @@ const laatKnoppenZien = function() {
     }, 8500);
     setTimeout(() => {
         result.classList.add("start");
-    }, 9000);
+    }, 9000);    
 };
 const button = document.getElementById("uitleg3");
 button.addEventListener("click", laatKnoppenZien);
 
 const emptyResults = () => {
     body.classList.remove("startscherm");
-    result.classList.remove("start");
+    result.classList.remove("start");    
     result.classList.remove("hondenfoto");
     result.classList.remove("grappenmaker");
     result.classList.remove("gerecht");

@@ -97,7 +97,7 @@ const weekDag = () => {
             dag = "woensdag";
             break;
         case 4:
-            dag ="dondedag";
+            dag ="donderdag";
             break;
         case 5:
             dag = "vrijdag";
