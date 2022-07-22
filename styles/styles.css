@@ -9,8 +9,10 @@ body {
     transition-duration: 4000ms;
 }
 
-.startscherm {
-    overflow-y: hidden;
+@media(min-width: 750px) {
+    .startscherm {
+        overflow-y: hidden;
+    }
 }
 
 .dark {
