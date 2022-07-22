@@ -164,6 +164,7 @@ main {
     background-color: #FF99BB;    
     border-color: #FF3377;
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .knop:hover p {
