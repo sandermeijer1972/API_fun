@@ -225,7 +225,7 @@ const addCityToDOM = async function() {
     } else {
         halfrond = "Zuidelijk";
     };
-    result.innerText = ("De " + soort + " " + city.data[0].name.toUpperCase() + ", gelegen in de provincie " + city.data[0].region + " in " + city.data[0].country + " op het " + halfrond + " Halfrond heeft " +  new Intl.NumberFormat().format(city.data[0].population) + " inwoners.") 
+    result.innerText = ("De " + soort + " " + city.data[0].name.toUpperCase() + ", gelegen in de provincie " + city.data[0].region + " in " + city.data[0].country + " op het " + halfrond + " Halfrond heeft " +  new Intl.NumberFormat('nl-NL').format(city.data[0].population) + " inwoners.") 
 };
 
 const cityButton = document.getElementById("tien");
