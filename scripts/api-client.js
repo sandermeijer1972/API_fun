@@ -144,7 +144,7 @@ const getInsult = async function() {
 // STAD OP AARDE
 
 const getCity = async function() {
-    const randomNumber = Math.floor(Math.random() * 23612 );
+    const randomNumber = Math.floor(Math.random() * 24185 );
     console.log(randomNumber);
     const apiURL = `https://cors-anywhere.herokuapp.com/http://geodb-free-service.wirefreethought.com/v1/geo/cities?limit=1&offset=${randomNumber}&hateoasMode=off`;
     try {
