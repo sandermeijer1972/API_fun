@@ -19,7 +19,7 @@ const laatKnoppenZien = function() {
         newP.classList.add("uitleg");
         newP.innerText = "Helaas werken niet alle knoppen even goed. Om de grootste fouten op te vangen, klik dan eerst even op onderstaande link. Je komt dan op een andere pagina terecht, waar je even 'request temporary access to the demo server' moet aanvragen. Daarna kan je hierboven in principe elke knop zo vaak aanklikken als je zelf wil.";
         result.appendChild(newP);        
-    }, 6000);
+    }, 7000);
     setTimeout(() => {
         const newPLink = document.createElement('p');
         newPLink.classList.add("link");
@@ -29,7 +29,7 @@ const laatKnoppenZien = function() {
         newA.innerText = "===> klik voor toegang tot de data <===";
         newPLink.appendChild(newA);
         result.appendChild(newPLink);         
-    }, 6500);
+    }, 7100);
     setTimeout(() => {
         result.classList.add("start");
     }, 9000);    
