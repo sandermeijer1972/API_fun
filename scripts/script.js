@@ -32,7 +32,7 @@ const laatKnoppenZien = function() {
     }, 7100);
     setTimeout(() => {
         result.classList.add("start");
-    }, 9000);    
+    }, 7500);    
 };
 const button = document.getElementById("uitleg3");
 button.addEventListener("click", laatKnoppenZien);
